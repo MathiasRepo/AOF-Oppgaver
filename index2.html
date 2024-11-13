@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="output">0</div>
+    <button onclick="setNumUp()">Opp</button>
+    <button onclick="setNumDown()">Ned</button>
+    <script>
+        
+        var outputDiv = document.getElementById("output");
+        var numToShow = 0;
+
+        function setNumDown() {
+            numToShow--;
+            output.innerHTML = numToShow;
+        }
+
+        function setNumUp() {
+            numToShow++;
+            output.innerHTML = numToShow;
+        }
+    </script>
+</body>
+</html>

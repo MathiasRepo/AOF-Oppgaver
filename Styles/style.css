@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "jakarta";
+    src: url(./Fonts/PlusJakartaSans-VariableFont_wght.ttf);
+  }
+
+body {
+    font-family: "jakarta";
+    background-color:bisque;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+.list {
+    list-style-type:disc;
+    position: auto;
+    list-style-position:inside;
+}
