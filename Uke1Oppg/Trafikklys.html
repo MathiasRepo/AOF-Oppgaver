@@ -1,19 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
     <style>
-
+      #trafikklys {
+        background-color: lightslategrey;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 15px;
+        width: 350px;
+      }
+      .red {
+        background-color: red;
+        opacity: 10%;
+      }
+      .orange {
+        background-color: orange;
+        opacity: 10%;
+      }
+      .green {
+        background-color: green;
+        opacity: 10%;
+      }
+      .circle {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        margin: 5px;
+      }
+      #buttons {
+        margin-top: 10px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        left: 10%;
+      }
+      .active {
+        opacity: 100%;
+      }
     </style>
-    <div>
-        
+  </head>
+  <body onload="timer()">
+    <div id="trafikklys">
+      <div id="red" class="red circle"></div>
+      <div id="orange" class="orange circle"></div>
+      <div id="green" class="green circle"></div>
     </div>
-    <script>
 
+    <div id="buttons">
+      <button onclick="light('orange','green','red','red')">Red</button>
+      <button onclick="light('green','green','orange','red')">
+        Red & Orange
+      </button>
+      <button onclick="light('red','orange','green','green')">Green</button>
+    </div>
+
+    <script>
+      function light(light1, light2, light3, light4) {
+        document.getElementById(light1).classList.remove("active");
+        document.getElementById(light2).classList.remove("active");
+        document.getElementById(light3).classList.add("active");
+        document.getElementById(light4).classList.add("active");
+      }
+      function timer() {
+        setTimeout(lightRed, 1500);
+      }
+      function lightRed() {
+        light("orange", "green", "red", "red");
+        setTimeout(lightRedAndOrange, 1500);
+      }
+      function lightRedAndOrange() {
+        light("green", "green", "red", "orange");
+        setTimeout(lightGreen, 1500);
+      }
+      function lightGreen() {
+        light("red", "orange", "green", "green");
+        setTimeout();
+      }
     </script>
-</body>
+  </body>
 </html>
