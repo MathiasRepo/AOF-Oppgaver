@@ -9,12 +9,12 @@ body {
 }
 #inputDiv {
     margin: 60px;
-    padding: 20px;
-    border-style: double;
-    border-color: aqua;
-    background-color: #424242;
-    box-shadow: black 10px 15px 15px;
+    border-style: solid;
+    border-radius: 6px;
+    border-color: rgb(231, 231, 231);
+    text-align: center;
 }
-.submitButton {
-    box-shadow: black 3px 3px 10px;
+#textInput {
+    padding-left: 60px;
+    padding-right: 60px;
 }
