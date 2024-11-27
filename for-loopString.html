@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="inputText">
+    <button onclick="countAndDisplay()">Tell vokaler</button>
+    <div id="results"></div>
+    <br>
+    <br>
+    <input type="text" id="inputText1">
+    <button onclick="reverse()">Reverser string</button>
+    <div id="results1"></div>
+    <script>
+      function countAndDisplay() {
+      let sentence = document.getElementById("inputText").value;
+
+      let aCounter = 0;
+      let eCounter = 0;
+      let iCounter = 0;
+      let oCounter = 0;
+      let uCounter = 0;
+      let yCounter = 0;
+      let æCounter = 0;
+      let øCounter = 0;
+      let åCounter = 0;
+
+      sentence = sentence.toLowerCase();
+
+      for (let char of sentence) {
+        if (char === 'a') aCounter++;
+        else if (char === 'e') eCounter++;
+        else if (char === 'i') iCounter++;
+        else if (char === 'o') oCounter++;
+        else if (char === 'u') uCounter++;
+        else if (char === 'y') yCounter++;
+        else if (char === 'æ') æCounter++;
+        else if (char === 'ø') øCounter++;
+        else if (char === 'å') åCounter++;
+      }
+
+      let resultsHTML = `
+        <p>Antall vokaler:</p>
+        <ul>
+          <li>A: ${aCounter}</li>
+          <li>E: ${eCounter}</li>
+          <li>I: ${iCounter}</li>
+          <li>O: ${oCounter}</li>
+          <li>U: ${uCounter}</li>
+          <li>Y: ${yCounter}</li>
+          <li>Æ: ${æCounter}</li>
+          <li>Ø: ${øCounter}</li>
+          <li>Å: ${åCounter}</li>
+        </ul>
+      `;
+
+      document.getElementById("results").innerHTML = resultsHTML;
+      }
+      
+      function reverse() {
+        let input1 = document.getElementById("inputText1").value;
+        const srj = input1.split('').reverse().join('');
+        document.getElementById("results1").innerHTML = srj
+      }
+    </script>
+  </body>
+</html>

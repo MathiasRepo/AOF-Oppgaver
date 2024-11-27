@@ -37,16 +37,31 @@
         <br>
         <br>
         <li>
-          <ul id="fete" onclick="applyAdj(this)">fete</ul>
-          <ul id="fælt" onclick="applyAdj(this)">fælt</ul>
-          <ul id="stort" onclick="applyAdj(this)">stort</ul>
+          <ul id="fete" onclick="applyAdj()">fete</ul>
+          <ul id="fælt" onclick="applyAdj()">fælt</ul>
+          <ul id="stort" onclick="applyAdj()">stort</ul>
         </li>
       </div>
       <script>
-        /* Skriv om til MVC - Modell, View, Controller */ 
+        /*Model*/
+        let adj1 = "fete";
+        let adj2 = "fælt";
+        let adj3 = "stort";
+
+        /*View*/
+        function applyAdj() {
+          document.getElementById("fete").innerHTML = adj1;
+          document.getElementById("fælt").innerHTML = adj2;
+          document.getElementById("stort").innerHTML = adj3;
+        }
+
+        /*Controller*/
+        
+
+        /* Skriv om til MVC - Modell, View, Controller 
         function applyAdj(element) {
           document.getElementById(element.id).textContent = element.id;
-        }
+        }*/
       </script>
   </body>
 </html>
