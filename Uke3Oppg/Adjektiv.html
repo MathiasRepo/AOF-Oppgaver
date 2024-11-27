@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        background-color: black;
+        color: antiquewhite;
+        margin: 2%
+      }
+      p {
+        font-size: 1.5rem;
+      }
+      ul{
+        list-style-type: none;
+        display: inline-block;
+        font-size: 1.7rem;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      span {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+    <div>
+        <p>
+          Det var en gang tre bukker som skulle gå til seters for å gjøre seg
+          <span id="fete">...</span>, og alle tre het de Bukken Bruse. På veien var det en bro over en
+          foss som de skulle over, og under den broen bodde et <span id="fælt">...</span>, <span id="stort">...</span> troll,
+          med øyne som tinntallerkener og nese så lang som et riveskaft.
+        </p>
+        <br>
+        <br>
+        <li>
+          <ul id="fete" onclick="applyAdj(this)">fete</ul>
+          <ul id="fælt" onclick="applyAdj(this)">fælt</ul>
+          <ul id="stort" onclick="applyAdj(this)">stort</ul>
+        </li>
+      </div>
+      <script>
+        /* Skriv om til MVC - Modell, View, Controller */ 
+        function applyAdj(element) {
+          document.getElementById(element.id).textContent = element.id;
+        }
+      </script>
+  </body>
+</html>
