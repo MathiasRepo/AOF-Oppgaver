@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #ball {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        height: 30rem;
+        max-width: 30rem;
+        border-radius: 50%;
+      }
+      #innerCircle {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 16rem;
+        width: 16rem;
+        border-radius: 50%;
+        box-shadow: inset 0 0 3px black;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      #font {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      let svar = [
+        "Det er sikkert",
+        "Uten tvil",
+        "Konsenter deg og prøv igjen",
+        "Det ser lovende ut",
+        "Mine kilder sier nei",
+        "Ikke regn med det",
+        "Ja, definitivt",
+        "Svaret er uklart, spør igjen senere",
+        "Tegnene peker på ja",
+        "Meget tvilsomt",
+      ];
+      let base = "8";
+      let sisteSvar = null;
+
+      show();
+      function show() {
+        let html = "";
+        html += /*HTML*/ `
+                <div id="ball">
+                    <div id="innerCircle" onclick="randomAnswer()">
+                    <div id="font">${base}</div>
+                    </div>
+                </div>`;
+        document.getElementById("app").innerHTML = html;
+      }
+      function randomAnswer() {
+        let nyttSvar;
+        do {
+          let randomOutput = Math.floor(Math.random() * svar.length);
+          nyttSvar = svar[randomOutput];
+        } while (nyttSvar === sisteSvar);
+        base = nyttSvar;
+        sisteSvar = nyttSvar;
+
+        show();
+      }
+    </script>
+  </body>
+</html>

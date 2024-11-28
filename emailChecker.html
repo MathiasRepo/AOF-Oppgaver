@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>epost checker</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" id="inputText" />
+      <button onclick="count()">Insert email</button>
+      <div id="results"></div>
+    </div>
+
+    <script>
+      function count() {
+        let email = document.getElementById("inputText").value;
+
+        if (email.includes(" ") || !email.includes("@")) {
+          document.getElementById("results").innerHTML = `<p>false</p>`;
+          return false;
+        }
+
+        let atPos = email.indexOf("@");
+        if (email.indexOf(".", atPos) === -1) {
+          document.getElementById("results").innerHTML = `<p>false</p>`;
+          return false;
+        }
+        document.getElementById("results").innerHTML = `<p>true</p>`;
+        return true;
+      }
+    </script>
+  </body>
+</html>
